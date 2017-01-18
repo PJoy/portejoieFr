@@ -415,14 +415,14 @@ img {
   vertical-align: middle;
 }
 
-[role="button"] {
+[] {
   cursor: pointer;
 }
 
 a,
 area,
 button,
-[role="button"],
+[],
 input,
 label,
 select,

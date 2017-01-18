@@ -8,7 +8,7 @@
 get_header(); ?>
 
 	<div id="content" class="site-content">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main" >
             <?php
 
             do_action( 'screenr_frontpage_before_section_parts' );

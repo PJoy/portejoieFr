@@ -10,7 +10,7 @@
  */
 
 ?>
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer" >
 		<?php
 		$footer_columns = absint( get_theme_mod( 'footer_layout' , 4 ) );
 		$max_cols = 12;
@@ -57,7 +57,7 @@
 							$id = 'footer-' . ( $count + 1 );
 							if ( $col ) {
 								?>
-								<div id="footer-<?php echo esc_attr( $count + 1 ) ?>" class="col-md-<?php echo esc_attr( $col ); ?> col-sm-12 footer-column widget-area sidebar" role="complementary">
+								<div id="footer-<?php echo esc_attr( $count + 1 ) ?>" class="col-md-<?php echo esc_attr( $col ); ?> col-sm-12 footer-column widget-area sidebar" >
 									<?php dynamic_sidebar( $id ); ?>
 								</div>
 								<?php
