@@ -774,7 +774,7 @@ function screenr_footer_credits(){
         <div class="container">
             <div class="row">
             <div class="col-md-6" style="text-align: left">
-                <?php  echo '&copy 2009 - '.date_i18n('Y').' | <a href="#top">Pierre Portejoie, Développeur Freelance</a><br>SIRET : 814 447 298 00013'?>
+                <?php  echo '&copy; 2009 - '.date_i18n('Y').' | <a href="#top">Pierre Portejoie, Développeur Freelance</a><br>SIRET : 814 447 298 00013'?>
             </div><!-- .site-copyright -->
             <div class="col-md-6" style="text-align: right">
                 <?php echo '<a href="'.get_home_url().'/plan-du-site">Plan du site</a> | <a>CV</a> <br> <a>Mentions Légales</a> | <a>Demander un devis</a>' ?>
