@@ -26,4 +26,6 @@ ExpiresByType application/javascript "access plus 1 year"
 Redirect 301 /author/admin /about
 Redirect 301 /portfolio_cat/uxui/ /portfolio_cat/ux-ui
 Redirect 301 /category/uncategorized /category/non-classe
+Redirect 301 /contact /about
+
 RedirectMatch 301 ^/portfolio/$ /realisations

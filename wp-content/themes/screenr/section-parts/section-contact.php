@@ -36,7 +36,7 @@ $classes    = 'section-contact section-padding onepage-section section-meta';
                             ?>
                             <li class="contact-detail">
                                 <?php if ( $item['icon'] ){ ?><span class="contact-icon"><i aria-hidden="true" class="<?php echo esc_attr( $item['icon'] ); ?> fa-2x"></i></span><?php } ?>
-                                <?php if ( $item['url'] ){ ?><a href="<?php echo antispambot( $item['url'] ); ?>"><?php } ?>
+                                <?php if ( $item['url'] ){ ?><a rel="nofollow" target="_blank"  href="<?php echo antispambot( $item['url'] ); ?>"><?php } ?>
                                     <span class="contact-detail-value"><?php echo esc_html( $item['title'] ); ?></span>
                                 <?php if ( $item['url'] ){ ?></a><?php } ?>
                             </li>

@@ -628,8 +628,9 @@ function screenr_page_header_cover()
     } elseif ( is_404() ) {
         $title = sprintf( esc_html__( '%s 404 Not Found!', 'screenr' ), '<i class="fa fa-frown-o"></i><br>' );
     } else {
-        $title = get_the_archive_title();
+        //$title = get_the_archive_title();
         $desc  = get_the_archive_description();
+	$title = $desc;
     }
 
     if ( ! $image ) {
@@ -690,10 +691,10 @@ function screenr_page_header_cover()
                 $html .= '<div class="swiper-slide-intro">';
                 $html .= '<div class="swiper-intro-inner"'.$style.'>';
                 if ( $item['title'] ) {
-                    $html .= '<h2 class="swiper-slide-heading">'.wp_kses_post( $item['title'] ).'</h2>';
+                    $html .= '<h1 class="swiper-slide-heading">'.wp_kses_post( $item['title'] ).'</h1>';
                 }
                 if ( $item['desc'] ) {
-                    $html .= '<div class="swiper-slide-desc">'.apply_filters( 'screenr_content_text', $item['desc'] ).'</div>';
+                    //$html .= '<div class="swiper-slide-desc">'.apply_filters( 'screenr_content_text', $item['desc'] ).'</div>';
                 }
 
                 $html .= '</div>';
@@ -777,7 +778,7 @@ function screenr_footer_credits(){
                 <?php  echo '&copy; 2009 - '.date_i18n('Y').' | <a href="https://portejoie.fr">Pierre Portejoie, Développeur Freelance</a><br>SIRET : 814 447 298 00013'?>
             </div><!-- .site-copyright -->
             <div class="col-md-6" style="text-align: right">
-                <?php echo '<a href="'.get_home_url().'/plan-du-site">Plan du site</a> | <a href="http://pjoy.fr/files/PIERRE_PORTEJOIE_CV_16_09_FR.pdf">CV</a> <br>  <a href="https://portejoie.fr/#contact">Demander un devis</a>' ?>
+                <?php echo '<a href="'.get_home_url().'/plan-du-site">Plan du site</a> | <a rel="nofollow" target="_blank" href="http://pjoy.fr/files/PIERRE_PORTEJOIE_CV_16_09_FR.pdf">CV</a> <br>  <a href="https://portejoie.fr/#contact">Demander un devis</a>' ?>
             </div>
             </div>
         </div>
