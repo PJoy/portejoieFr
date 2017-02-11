@@ -22,3 +22,8 @@ ExpiresByType text/css "access plus 1 month"
 ExpiresByType application/javascript "access plus 1 year"
 </IfModule>
 
+#REDIRECTS
+Redirect 301 /author/admin /about
+Redirect 301 /portfolio_cat/uxui/ /portfolio_cat/ux-ui
+Redirect 301 /category/uncategorized /category/non-classe
+RedirectMatch 301 ^/portfolio/$ /realisations
