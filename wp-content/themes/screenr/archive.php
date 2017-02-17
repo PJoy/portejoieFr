@@ -8,7 +8,6 @@
  */
 
 get_header(); ?>
-
 	<div id="content" class="site-content">
 
 		<div id="content-inside" class="container <?php echo esc_attr( get_theme_mod( 'layout_settings', 'right' ) ); ?>-sidebar">

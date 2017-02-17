@@ -336,7 +336,7 @@ require get_template_directory() . '/inc/dashboard.php';
 //require_once( trailingslashit( get_template_directory() ) . 'trt-customizer-pro/example-1/class-customize.php' );
 
 add_action('wp_footer', 'add_googleanalytics');
-function add_googleanalytics() { ?>
+function add_googleanalytics() {/* ?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -345,5 +345,11 @@ function add_googleanalytics() { ?>
 
   ga('create', 'UA-90254387-1', 'auto');
   ga('send', 'pageview');
+</script> <?php */ ?>
+
+<script src="https://cdn.jsdelivr.net/ga-lite/latest/ga-lite.min.js" async></script>
+<script>
+var galite = galite || {};
+galite.UA = 'UA-90254387-1'; // Insert your tracking code here
 </script>
 <?php } 
