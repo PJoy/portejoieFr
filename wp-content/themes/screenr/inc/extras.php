@@ -778,7 +778,7 @@ function screenr_footer_credits(){
                 <?php  echo '&copy; 2009 - '.date_i18n('Y').' | <a href="https://portejoie.fr">Pierre Portejoie, Développeur Freelance</a><br>SIRET : 814 447 298 00013'?>
             </div><!-- .site-copyright -->
             <div class="col-md-6" style="text-align: right">
-                <?php echo '<a href="'.get_home_url().'/plan-du-site">Plan du site</a> | <a rel="nofollow" target="_blank" href="http://pjoy.fr/files/PIERRE_PORTEJOIE_CV_16_09_FR.pdf">CV</a> <br>  <a href="https://portejoie.fr/#contact">Demander un devis</a>' ?>
+                <?php echo '<a href="'.get_home_url().'/plan-du-site">Plan du site</a> | <a rel="nofollow" target="_blank" href="http://pjoy.fr/files/PIERRE_PORTEJOIE_CV_16_09_FR.pdf">CV</a> <br>  <a href="https://portejoie.fr/mentions-legales/">Mentions légales</a> | <a href="https://portejoie.fr/#contact">Demander un devis</a>' ?>
             </div>
             </div>
         </div>

@@ -22,10 +22,15 @@ ExpiresByType text/css "access plus 1 month"
 ExpiresByType application/javascript "access plus 1 year"
 </IfModule>
 
+RewriteRule ^(.+?/)?fr(?:/(.*))?$ /$1$2 [NC,R=301,L]
+
+
 #REDIRECTS
 Redirect 301 /author/admin /about
 Redirect 301 /portfolio_cat/uxui/ /portfolio_cat/ux-ui
 Redirect 301 /category/uncategorized /category/non-classe
+Redirect 301 /prestations/application-mobile/ /prestations/developpement-application-mobile/
 Redirect 301 /contact /about
+Redirect 301 /en /
 
 RedirectMatch 301 ^/portfolio/$ /realisations
