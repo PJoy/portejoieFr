@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7fbba94e-862c-45f8-8cb7-437ee8af99ec" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/screenr/template-parts/content.php" afterPath="$PROJECT_DIR$/wp-content/themes/screenr/template-parts/content.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/screenr/inc/extras.php" afterPath="$PROJECT_DIR$/wp-content/themes/screenr/inc/extras.php" />
     </list>
     <ignored path="portejoiefr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,111 +24,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="search.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/search.php">
+      <file leaf-file-name="extras.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/inc/extras.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+            <state relative-caret-position="-590">
+              <caret line="632" column="23" selection-start-line="632" selection-start-column="23" selection-end-line="632" selection-end-column="23" />
               <folding>
-                <element signature="e#6#181#0#PHP" expanded="false" />
+                <element signature="e#6#188#0#PHP" expanded="true" />
+                <element signature="e#23502#23526#0#HTML" expanded="true" />
+                <element signature="e#23760#23785#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sidebar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/sidebar.php">
+      <file leaf-file-name="post-type.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/plugins/screenr-plus/inc/post-type.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-              <folding>
-                <element signature="e#6#176#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="single.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/single.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-              <folding>
-                <element signature="e#6#175#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template-frontpage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/template-frontpage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="340">
+              <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="full-width-page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/templates/full-width-page.php">
+      <file leaf-file-name="general-template.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-includes/general-template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="461">
+              <caret line="1464" column="8" selection-start-line="1464" selection-start-column="8" selection-end-line="1464" selection-end-column="8" />
               <folding>
-                <element signature="e#6#385#0#PHP" expanded="false" />
+                <marker date="1479692790000" expanded="true" signature="28836:28849" ph="..." />
+                <marker date="1479692790000" expanded="true" signature="55477:55659" ph="SELECT YEAR(... " />
+                <marker date="1479692790000" expanded="true" signature="56551:56686" ph="SELECT YEAR(... " />
+                <marker date="1479692790000" expanded="true" signature="57451:57695" ph="SELECT YEAR(... " />
+                <marker date="1479692790000" expanded="true" signature="58666:58904" ph="SELECT DISTI... " />
+                <marker date="1479692790000" expanded="true" signature="60308:60366" ph="SELECT * FRO... wp_posts" />
+                <marker date="1479692790000" expanded="true" signature="62669:62764" ph="SELECT 1 as wp_posts" />
+                <marker date="1479692790000" expanded="true" signature="64002:64216" ph="SELECT MONTH... " />
+                <marker date="1479692790000" expanded="true" signature="64245:64476" ph="SELECT MONTH... " />
+                <marker date="1479692790000" expanded="true" signature="64652:64793" ph="..." />
+                <marker date="1479692790000" expanded="true" signature="64787:64793" ph="..." />
+                <marker date="1479692790000" expanded="true" signature="65238:65244" ph="..." />
+                <marker date="1479692790000" expanded="true" signature="66047:66053" ph="..." />
+                <marker date="1479692790000" expanded="true" signature="66146:66381" ph="SELECT DISTI... wp_posts" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="attachment.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/attachment.php">
+      <file leaf-file-name="kses.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-includes/kses.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding>
-                <element signature="e#6#94#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/template-parts/content.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+            <state relative-caret-position="206">
+              <caret line="1566" column="9" selection-start-line="1566" selection-start-column="9" selection-end-line="1566" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auto-apply.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/plugins/screenr-plus/inc/typography/auto-apply.php">
+      <file leaf-file-name="section-contact.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/section-parts/section-contact.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="portfolio.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/plugins/screenr-plus/templates/portfolio.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template-tags.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/inc/template-tags.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="54" column="113" selection-start-line="54" selection-start-column="103" selection-end-line="54" selection-end-column="113" />
+            <state relative-caret-position="209">
+              <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -151,7 +110,6 @@
         <option value="$PROJECT_DIR$/wp-content/plugins/screenr-plus/screenr-plus.css" />
         <option value="$PROJECT_DIR$/wp-content/plugins/screenr-plus/inc/template-tags.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/screenr/style.css" />
-        <option value="$PROJECT_DIR$/wp-content/themes/screenr/inc/extras.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/screenr-plus/templates/portfolio.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/screenr-plus/templates/template-portfolios.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/screenr/404.php" />
@@ -170,6 +128,9 @@
         <option value="$PROJECT_DIR$/wp-content/themes/screenr/templates/full-width-page.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/screenr/attachment.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/screenr/template-parts/content.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/screenr/inc/extras.php" />
+        <option value="$PROJECT_DIR$/wp-content/plugins/screenr-plus/text.csv" />
+        <option value="$PROJECT_DIR$/wp-content/themes/screenr/section-parts/section-contact.php" />
       </list>
     </option>
   </component>
@@ -212,6 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -299,110 +261,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="screenr" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template-parts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portejoiefr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portejoiefr" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="screenr" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="section-parts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portejoiefr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portejoiefr" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="screenr" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="languages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portejoiefr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portejoiefr" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="screenr" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portejoiefr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portejoiefr" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="plugins" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -431,7 +289,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -507,19 +364,20 @@
       <workItem from="1483901867245" duration="692000" />
       <workItem from="1484041395316" duration="8492000" />
       <workItem from="1484128723456" duration="2435000" />
-      <workItem from="1484737841153" duration="1128000" />
+      <workItem from="1484737841153" duration="1808000" />
+      <workItem from="1486803620922" duration="3150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12747000" />
+    <option name="totallyTimeSpent" value="16577000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26037195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2639485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -557,58 +415,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/general-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="2583" column="9" selection-start-line="2583" selection-start-column="9" selection-end-line="2583" selection-end-column="9" />
-          <folding>
-            <marker date="1479692790000" expanded="true" signature="28836:28849" ph="..." />
-            <marker date="1479692790000" expanded="true" signature="55477:55659" ph="SELECT YEAR(... " />
-            <marker date="1479692790000" expanded="true" signature="56551:56686" ph="SELECT YEAR(... " />
-            <marker date="1479692790000" expanded="true" signature="57451:57695" ph="SELECT YEAR(... " />
-            <marker date="1479692790000" expanded="true" signature="58666:58904" ph="SELECT DISTI... " />
-            <marker date="1479692790000" expanded="true" signature="60308:60366" ph="SELECT * FRO... wp_posts" />
-            <marker date="1479692790000" expanded="true" signature="62669:62764" ph="SELECT 1 as wp_posts" />
-            <marker date="1479692790000" expanded="true" signature="64002:64216" ph="SELECT MONTH... " />
-            <marker date="1479692790000" expanded="true" signature="64245:64476" ph="SELECT MONTH... " />
-            <marker date="1479692790000" expanded="true" signature="64652:64793" ph="..." />
-            <marker date="1479692790000" expanded="true" signature="64787:64793" ph="..." />
-            <marker date="1479692790000" expanded="true" signature="65238:65244" ph="..." />
-            <marker date="1479692790000" expanded="true" signature="66047:66053" ph="..." />
-            <marker date="1479692790000" expanded="true" signature="66146:66381" ph="SELECT DISTI... wp_posts" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/Freelance/2_MFL/Dev/backup01.11.2016/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="19" column="68" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/section-parts/section-contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-435">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/theme.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="854" column="9" selection-start-line="854" selection-start-column="9" selection-end-line="854" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/section-parts/section-about.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -708,6 +514,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -752,7 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="205" column="24" selection-start-line="205" selection-start-column="24" selection-end-line="205" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -773,16 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/inc/extras.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="779" column="91" selection-start-line="779" selection-start-column="91" selection-end-line="779" selection-end-column="91" />
-          <folding>
-            <element signature="e#6#188#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/screenr-plus/templates/template-portfolios.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -799,19 +595,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/archive.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/assets/js/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="6" column="2581" selection-start-line="6" selection-start-column="2581" selection-end-line="6" selection-end-column="2581" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="424" column="1" selection-start-line="424" selection-start-column="1" selection-end-line="424" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,7 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="1407" column="44" selection-start-line="1407" selection-start-column="44" selection-end-line="1407" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -835,7 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="58" column="74" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -885,9 +669,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding>
-            <element signature="e#6#181#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -895,9 +677,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-          <folding>
-            <element signature="e#6#176#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -915,29 +695,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="e#6#63#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/inc/template-tags.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="720">
           <caret line="54" column="113" selection-start-line="54" selection-start-column="103" selection-end-line="54" selection-end-column="113" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/screenr-plus/templates/portfolio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-          <folding />
+          <folding>
+            <element signature="e#6#161#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/screenr-plus/inc/typography/auto-apply.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="345">
           <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
           <folding />
         </state>
@@ -955,18 +731,99 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/attachment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="345">
           <caret line="28" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#94#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/template-parts/content.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="60">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/screenr-plus/templates/portfolio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="47" column="128" selection-start-line="47" selection-start-column="128" selection-end-line="47" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/archive.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-includes/kses.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="1566" column="9" selection-start-line="1566" selection-start-column="9" selection-end-line="1566" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-includes/general-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="1464" column="8" selection-start-line="1464" selection-start-column="8" selection-end-line="1464" selection-end-column="8" />
+          <folding>
+            <marker date="1479692790000" expanded="true" signature="28836:28849" ph="..." />
+            <marker date="1479692790000" expanded="true" signature="55477:55659" ph="SELECT YEAR(... " />
+            <marker date="1479692790000" expanded="true" signature="56551:56686" ph="SELECT YEAR(... " />
+            <marker date="1479692790000" expanded="true" signature="57451:57695" ph="SELECT YEAR(... " />
+            <marker date="1479692790000" expanded="true" signature="58666:58904" ph="SELECT DISTI... " />
+            <marker date="1479692790000" expanded="true" signature="60308:60366" ph="SELECT * FRO... wp_posts" />
+            <marker date="1479692790000" expanded="true" signature="62669:62764" ph="SELECT 1 as wp_posts" />
+            <marker date="1479692790000" expanded="true" signature="64002:64216" ph="SELECT MONTH... " />
+            <marker date="1479692790000" expanded="true" signature="64245:64476" ph="SELECT MONTH... " />
+            <marker date="1479692790000" expanded="true" signature="64652:64793" ph="..." />
+            <marker date="1479692790000" expanded="true" signature="64787:64793" ph="..." />
+            <marker date="1479692790000" expanded="true" signature="65238:65244" ph="..." />
+            <marker date="1479692790000" expanded="true" signature="66047:66053" ph="..." />
+            <marker date="1479692790000" expanded="true" signature="66146:66381" ph="SELECT DISTI... wp_posts" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/inc/extras.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-590">
+          <caret line="632" column="23" selection-start-line="632" selection-start-column="23" selection-end-line="632" selection-end-column="23" />
+          <folding>
+            <element signature="e#6#188#0#PHP" expanded="true" />
+            <element signature="e#23502#23526#0#HTML" expanded="true" />
+            <element signature="e#23760#23785#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/screenr-plus/inc/post-type.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/screenr-plus/text.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="292" column="49" selection-start-line="292" selection-start-column="49" selection-end-line="292" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/screenr/section-parts/section-contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
           <folding />
         </state>
       </provider>

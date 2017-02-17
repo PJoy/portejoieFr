@@ -628,8 +628,9 @@ function screenr_page_header_cover()
     } elseif ( is_404() ) {
         $title = sprintf( esc_html__( '%s 404 Not Found!', 'screenr' ), '<i class="fa fa-frown-o"></i><br>' );
     } else {
-        $title = get_the_archive_title();
+        //$title = get_the_archive_title();
         $desc  = get_the_archive_description();
+        $title = $desc;
     }
 
     if ( ! $image ) {
@@ -670,6 +671,7 @@ function screenr_page_header_cover()
         <div class="swiper-container" data-autoplay="0">
             <div class="swiper-wrapper">
                 <?php
+
                 $style = "";
                 if ( $item['image'] ) {
                     $style = ' style="background-image: url(\''.esc_url( $item['image'] ).'\');" ';
@@ -690,7 +692,7 @@ function screenr_page_header_cover()
                 $html .= '<div class="swiper-slide-intro">';
                 $html .= '<div class="swiper-intro-inner"'.$style.'>';
                 if ( $item['title'] ) {
-                    $html .= '<h2 class="swiper-slide-heading">'.wp_kses_post( $item['title'] ).'</h2>';
+                    $html .= '<h1 class="swiper-slide-heading">'.wp_kses_post( $item['title'] ).'</h1>';
                 }
                 if ( $item['desc'] ) {
                     $html .= '<div class="swiper-slide-desc">'.apply_filters( 'screenr_content_text', $item['desc'] ).'</div>';
