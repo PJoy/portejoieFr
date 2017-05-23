@@ -32,5 +32,29 @@ Redirect 301 /category/uncategorized /category/non-classe
 Redirect 301 /prestations/application-mobile/ /prestations/developpement-application-mobile/
 Redirect 301 /contact /about
 Redirect 301 /en /
+Redirect 301 /fr /
+Redirect 301 /prestations/site-web-en-responsive-design/ /site-web-responsive-design
+
+Redirect 301 /developpement-application-mobile/ /developpeur-application-mobile/
+Redirect 301 /prestations/developpement-application-mobile/ /developpeur-application-mobile/
+Redirect 301 /prestations/application-mobile/ /developpeur-application-mobile/
+Redirect 301 /site-web-en-responsive-design/ /site-web-responsive-design/
+Redirect 301 /prestations/site-web-en-responsive-design/ /site-web-responsive-design/
+Redirect 301 /freelance-web-developer/ /
+Redirect 301 /partenaires/ /
+Redirect 301 /prestations/refonte-de-site-web/ /prestations/refonte-de-site-web/
+Redirect 301 /prestations/referencement-naturel/ /referencement-naturel/
+Redirect 301 /prestations/formation/ /formation-web-independant/
+Redirect 301 /fr/contact/ /contact
+
+Redirect 301 /category/wordpress-en/ /category/wordpress/
+Redirect 301 /category/freelance-en/ /category/freelance/
+Redirect 301 /category/business/ /category/freelance/
+Redirect 301 /2017/01/08/hello-world/ /
 
 RedirectMatch 301 ^/portfolio/$ /realisations
+RedirectMatch 301 ^/tag/.* /prestations-web/
+RedirectMatch 301 ^/fr/category/.* /prestations-web/
+RedirectMatch 301 ^/en/category/.* /prestations-web/
+RedirectMatch 301 ^/blog.* /articles
+
