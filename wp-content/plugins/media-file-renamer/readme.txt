@@ -2,20 +2,20 @@
 Contributors: TigrouMeow
 Tags: rename, file, media, management, image, renamer, wpml, wp-retina-2x
 Requires at least: 4.2
-Tested up to: 4.7.2
-Stable tag: 3.2.0
+Tested up to: 4.8
+Stable tag: 3.5.8
 
-Auto-rename the files when titles are modified and update and the references (links). Manual Rename is a Pro option. Please read the description.
+Automatically rename files depending on Media titles dynamically + update links. Pro version has many more options. Check the description :)
 
 == Description ==
 
-The Media File Renamer is a WordPress plugin that physically renames media files nicely for a cleaner system and for a better SEO. Please read the description as it contains important information.
+The Media File Renamer is a WordPress plugin that physically renames media files nicely for a cleaner system and for a better SEO. Please read this description.
 
 **IMPORTANT**. This is originally an *automatic* renamer based on the Media title. This plugin features were all meant to be automatic depending on the title of the Media. Manual Rename (and a few more features) were added two years later, in a Pro version. I add complex features based on requests usually in the Pro to be able to maintain the quality of the plugin and its support.
 
 **HOW IT WORKS**. The plugin automatically renames your media filenames depending on their titles. When files are renamed, the references to it are also updated (posts, pages, custom types and their metadata). A new column in the Media Manager will display to you the new ideal filename and a button will allow you to rename it straight away. You can lock and unlock the renaming automatic process through little icons. There is also a little dashboard called File Renamer in Media that will help you rename all your files at once. Advanced users can change the way the files are renamed by using the plugin's filters (check the FAQ). There is also a LOCK option on every image to avoid the filename to be modified any further.
 
-**PRO VERSION**. The [Pro Version](http://meowapps.com/media-file-renamer/) gives a few more features like manual renaming, renaming depending on the post the media is attached to, logging of SQL queries and a few more options. A good process is to actually let the plugin do the renaming automatically (like in the free version) and to do manual renaming for the files that require fine tuning.
+**PRO VERSION**. The [Pro Version](http://meowapps.com/media-file-renamer/) gives a few more features like manual renaming, renaming depending on the post the media is attached to or the content of the alternative text (ALT), logging of SQL queries and a few more options. A good process is to actually let the plugin do the renaming automatically (like in the free version) and to do manual renaming for the files that require fine tuning.
 
 **BE CAREFUL**. File renaming is a dangerous process. Before renaming everything automatically, try to rename a few files first and check if all the references to those files have been properly updated on your website. WordPress has so many themes and plugins that this renaming process can't unfortunately cover all the cases, especially if other plugins are using unconventional ways. If references aren't updated properly, please write a nice post (not an angry one) in the support threads :) I will try my best to cover more and more special cases. In any case, always make a **backup** of your database and files before using a plugin that alter your install. Also, it your website seems broken after a few renames, try to **clear your cache**. The cached HTML will indeed not be linked to the new filenames.
 
@@ -50,6 +50,17 @@ add_filter( 'mfrh_new_filename', 'my_filter_filename', 10, 3 );
 
 function my_filter_filename( $new, $old, $post ) {
   return "renamed-" . $new;
+}
+`
+
+The mfrh_replace_rules filter is a bit simpler and allows you to customize specific characters or bit of strings, like with the example below.
+
+`
+add_filter( 'mfrh_replace_rules', 'replace_s_by_z', 10, 1 );
+
+function replace_s_by_z( $rules ) {
+  $rules['s'] = 'z';
+  return $rules;
 }
 `
 
@@ -89,10 +100,45 @@ You are welcome to create plugins using Media File Renamer using special rules f
 
 == Changelog ==
 
+= 3.5.8 =
+* Add: New button "Lock All"
+* Fix: Button "Unlock All and Rename" was not really unlocking everything.
+
+= 3.5.6 =
+* Fix: Sometimes numbered files were renamed something like abc-2-2.jpg.
+* Update: Rename with lowercase to avoid issues.
+* Add: Option for Pro, Media Title is synchronized with Title of Attached Post.
+
+= 3.5.4 =
+* Add: mfrh_replace_rules filter allows you to personalize the renaming at the character level.
+
+= 3.5.2 =
+* Fix: Update system fixed and code cleaning.
+
+= 3.4.5 =
+* Fix: Better handling of umlauts.
+* Info: There will be an important warning showing up during this update. It is an important annoucement.
+
+= 3.2.7 =
+* Fix: Slug was not getting renamed after recent WP update.
+* Fix: Tiny fixed to avoid notices.
+* Add: Support for WPML Media (thanks to David García froml WPML Team).
+
+= 3.2.4 =
+* Fix: Should work with more plugins/themes, WooCommerce for example. The updates aren't done only on the full URLs of the images in the DB now but also on the relative uploads path as well.
+* Info: If you have some time, please review me nicely at https://wordpress.org/support/view/plugin-reviews/media-file-renamer?rate=5#postform. Thanks to you, I get a lot of motivation to make this plugin better :)
+
+= 3.2.3 =
+* Add: Option to rename depending on the ALT. Useful if you get interesting information in your ALT.
+* Update: Sync ALT also works with Attached Post Title.
+* Fix: Better handling of norwegian letters (will improve this kind of things over time).
+
+= 3.2.2 =
+* Add: Rename the file during upload, based on the media title. Not by default, check the options :)
+
 = 3.2.0 =
 * Fix: Logging could not be enabled.
 * Update: Code cleaning.
-* Info: If you have some time, please review me nicely at https://wordpress.org/support/view/plugin-reviews/media-file-renamer?rate=5#postform. Thanks to you, I get a lot of motivation to make this plugin better.
 
 = 3.1.0 =
 * Update: The UI was a bit modified and enhanced. I also think it is simpler and cleaner.

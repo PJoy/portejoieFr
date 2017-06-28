@@ -52,6 +52,15 @@ Redirect 301 /category/freelance-en/ /category/freelance/
 Redirect 301 /category/business/ /category/freelance/
 Redirect 301 /2017/01/08/hello-world/ /
 
+Redirect 301 /category/shell /category/bash-scripting/
+Redirect 301 /category/gnu-linux /category/linux
+Redirect 301 /category/category/debugging-en/ /category/debugging/
+Redirect 301 /category/wordpress-development/ /category/wordpress
+Redirect 301 /prestations/formation-web-informatique /prestations-web/formation-web-independant/
+Redirect 301 /category/non-classe-en/ /category/non-classe
+Redirect 301 /category/development-en/ /category/development
+Redirect 301 /category/actionfilters-en/ /category/actionfilters/
+
 RedirectMatch 301 ^/portfolio/$ /realisations
 RedirectMatch 301 ^/tag/.* /prestations-web/
 RedirectMatch 301 ^/fr/category/.* /prestations-web/

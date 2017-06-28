@@ -4,9 +4,9 @@ Donate link: https://yoast.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: SEO, XML sitemap, Google Search Console, Content analysis, Readability
-Requires at least: 4.4
-Tested up to: 4.7
-Stable tag: 4.2.1
+Requires at least: 4.6
+Tested up to: 4.8
+Stable tag: 4.9
 
 Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.
 
@@ -29,7 +29,7 @@ Using the snippet preview, you can see a rendering of what your post or page wil
 = Page Analysis =
 The Yoast SEO plugins [Page Analysis](https://yoast.com/content-seo-wordpress-linkdex/) functionality checks simple things you're bound to forget. It checks, for instance, if you have images in your post and whether they have an alt tag containing the focus keyword for that post. It also checks whether your posts are long enough, whether you've written a meta description and if that meta description contains your focus keyword, if you've used any subheadings within your post, etc. etc.
 
-The plugin also allows you to write meta titles and descriptions for all your category, tag and custom taxonomy archives, giving you the option to further optimize those pages.
+The plugin alsgruo allows you to write meta titles and descriptions for all your category, tag and custom taxonomy archives, giving you the option to further optimize those pages.
 
 Combined, this plugin makes sure that your content is the type of content search engines will love!
 
@@ -124,42 +124,31 @@ You'll find answers to many of your questions on [kb.yoast.com](https://kb.yoast
 
 == Changelog ==
 
-= 4.2.1 =
+= 4.9.0 =
 
-Release Date: February 2nd, 2017
+Release Date: June 7th, 2017
 
 * Bugfixes
-	* Fixes a fatal error "Call to undefined method yoast_i18n::set_api_url()". This error occurred with certain other plugins that also include the i18n-module.
+	* Fixes a bug where there were certain assessments missing when switching to cornerstone content.
+	* Fixes a bug where the configuration wizard button was visible for users who didn't have enough rights to access the configuration wizard.
+	* Fixes a bug where the column `ID` was ambiguous, causing an SQL error.
+	* Fixes a bug where the category URL in the sitemap was encoded twice.
+	* Fixes a bug where an old upgrade notice is not removed.
 
-= 4.2.0 =
+* Enhancements
+	* Removes the noodp advanced robots meta value as it is no longer used.
+	* Loads the translations only when the configuration wizard endpoint is called, instead of every time `rest_api_init` is called.
 
-Release Date: January 31st, 2017
+= 4.8.0 =
 
-* Bugfixes:
-	* Fixes a bug where the sitemaps were being invalidated too often.
-	* Fixes a bug where the 'meta keywords' meta box section stayed visible when switching to the readability tab.
+Release Date: May 23rd, 2017
 
-* Enhancements:
-	* Moves translations from translate.yoast.com to translate.wordpress.org.
-	* Improves the styling of the featured image warning and sends an audible message for screen readers.
-	* Makes the left sidebar of the meta box responsive.
-	* Removes unused heading from the meta box.
-	* Improves responsiveness for settings pages.
+* Bugfixes
+	* Fixes a bug where the tabs in the social and advanced metabox section are gone when keyword analysis has been disabled.
 
-= 4.1.0 =
-
-Release Date: January 17th, 2017
-
-* Bugfixes:
-	* Fixes a glitch in the notification center where a notification would be shown twice.
-	* Fixes a bug where the realtime analysis didn't work on term pages.
-	* Fixes a bug where the sitemap invalidation uses an expensive query to clean up old validators.
-
-* Enhancements:
-	* Added a mobile snippet preview.
-	* Added a function that allows retrieving an option only when it's been autoloaded.
-	* Remove review banner from mobile, props [abhinavkumar940](https://github.com/abhinavkumar940).
-	* Add labels to redirect checkboxes in the search console to improve accessibility.
+* Enhancements
+	* Optimizes the way the cornerstone flag is saved.
+	* Analyzes the content using cornerstone assessors when a post or page is cornerstone content.
 
 = Earlier versions =
 

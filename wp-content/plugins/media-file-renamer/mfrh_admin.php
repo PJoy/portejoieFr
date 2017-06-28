@@ -1,16 +1,11 @@
 <?php
 
-include "common/meow_admin.php";
+include "common/admin.php";
 
-class MFRH_Admin extends Meow_Admin {
+class Meow_MFRH_Admin extends MeowApps_Admin {
 
-	public function __construct() {
-		parent::__construct( 'mfrh', 'media-file-renamer' );
-
-		$method = get_option( 'mfrh_auto_rename', 666 );
-		if ( $method == 666 )
-			$this->initial_setup();
-
+	public function __construct( $prefix, $mainfile, $domain ) {
+		parent::__construct( $prefix, $mainfile, $domain );
 		if ( is_admin() ) {
 			add_action( 'admin_menu', array( $this, 'app_menu' ) );
 			add_action( 'admin_notices', array( $this, 'admin_notices' ) );
@@ -26,39 +21,27 @@ class MFRH_Admin extends Meow_Admin {
 			if ( file_exists( plugin_dir_path( __FILE__ ) . '/mfrh_sql_revert.log' ) )
 				unlink( plugin_dir_path( __FILE__ ) . '/mfrh_sql_revert.log' );
 		}
-	}
+		$method = apply_filters( 'mfrh_method', 'media_title' );
+		$sync_alt = get_option( 'mfrh_sync_alt' );
+		$sync_meta_title = get_option( 'mfrh_sync_media_title' );
 
-	function initial_setup() {
-		$auto_rename = $this->old_getoption( 'auto_rename', 'mfrh_basics', 'media_title' );
-		update_option( 'mfrh_auto_rename', $auto_rename, 'media_title' );
-		$manual_rename = $this->old_getoption( 'manual_rename', 'mfrh_basics', true );
-		update_option( 'mfrh_manual_rename', $manual_rename, false );
-		$numbered_files = $this->old_getoption( 'numbered_files', 'mfrh_basics', false );
-		update_option( 'mfrh_numbered_files', $numbered_files, false );
-		$rename_slug = $this->old_getoption( 'rename_slug', 'mfrh_basics', false );
-		update_option( 'mfrh_rename_slug', $rename_slug, false );
-		$rename_guid = $this->old_getoption( 'rename_guid', 'mfrh_basics', false );
-		update_option( 'mfrh_rename_guid', $rename_guid, false );
-		$sync_alt = $this->old_getoption( 'sync_alt', 'mfrh_basics', false );
-		update_option( 'mfrh_sync_alt', $sync_alt, false );
-		$rename_on_save = $this->old_getoption( 'rename_on_save', 'mfrh_basics', false );
-		update_option( 'mfrh_rename_on_save', $rename_on_save, false );
-		$update_posts = $this->old_getoption( 'update_posts', 'mfrh_basics', true );
-		update_option( 'mfrh_update_posts', $update_posts, false );
-		$update_postmeta = $this->old_getoption( 'update_postmeta', 'mfrh_basics', true );
-		update_option( 'mfrh_update_postmeta', $update_postmeta, false );
-		$utf8_filename = $this->old_getoption( 'utf8_filename', 'mfrh_basics', false );
-		update_option( 'mfrh_utf8_filename', $utf8_filename, false );
-		$force_rename = $this->old_getoption( 'force_rename', 'mfrh_basics', false );
-		update_option( 'mfrh_force_rename', $force_rename, false );
-		$log = $this->old_getoption( 'log', 'mfrh_basics', false );
-		update_option( 'mfrh_log', $log, false );
-		$logsql = $this->old_getoption( 'logsql', 'mfrh_basics', false );
-		update_option( 'mfrh_logsql', $logsql, false );
-		$pro_serial = $this->old_getoption( 'pro_serial', 'mfrh_pro', '' );
-		update_option( 'mfrh_pro_serial', $pro_serial, false );
-		delete_option( 'mfrh_basics' );
-		delete_option( 'mfrh_pro' );
+		if ( $sync_alt && $method == 'alt_text' ) {
+			update_option( 'mfrh_sync_alt', false, false );
+			?>
+	    <div class="notice notice-warning is-dismissible">
+	        <p><?php _e( 'The option Sync ALT was turned off since it does not make sense to have it with this Auto-Rename mode.', 'media-file-renamer' ); ?></p>
+	    </div>
+	    <?php
+		}
+
+		if ( $sync_meta_title && $method == 'media_title' ) {
+			update_option( 'mfrh_sync_media_title', false, false );
+			?>
+	    <div class="notice notice-warning is-dismissible">
+	        <p><?php _e( 'The option Sync Media Title was turned off since it does not make sense to have it with this Auto-Rename mode.', 'media-file-renamer' ); ?></p>
+	    </div>
+	    <?php
+		}
 	}
 
 	function common_url( $file ) {
@@ -66,6 +49,8 @@ class MFRH_Admin extends Meow_Admin {
 	}
 
 	function app_menu() {
+
+		$method = apply_filters( 'mfrh_method', 'media_title' );
 
 		// SUBMENU > Settings
 		add_submenu_page( 'meowapps-main-menu', 'Media File Renamer', 'Media Renamer', 'manage_options',
@@ -76,11 +61,16 @@ class MFRH_Admin extends Meow_Admin {
 			add_settings_field( 'mfrh_auto_rename', "Auto Rename",
 				array( $this, 'admin_auto_rename_callback' ),
 				'mfrh_settings-menu', 'mfrh_settings' );
+			add_settings_field( 'mfrh_on_upload', "On Upload",
+				array( $this, 'admin_on_upload_callback' ),
+				'mfrh_settings-menu', 'mfrh_settings' );
+
 			add_settings_field( 'mfrh_rename_slug', "Sync Slug<br /><i>Permalink</i>",
 				array( $this, 'admin_rename_slug_callback' ),
 				'mfrh_settings-menu', 'mfrh_settings' );
 
 			register_setting( 'mfrh_settings', 'mfrh_auto_rename' );
+			register_setting( 'mfrh_settings', 'mfrh_on_upload' );
 			register_setting( 'mfrh_settings', 'mfrh_rename_slug' );
 
 			// SUBMENU > Settings > Side Settings
@@ -106,20 +96,26 @@ class MFRH_Admin extends Meow_Admin {
 			add_settings_field( 'mfrh_numbered_files', "Numbered Files<br />(Pro)",
 				array( $this, 'admin_numbered_files_callback' ),
 				'mfrh_advanced_settings-menu', 'mfrh_advanced_settings' );
-			add_settings_field( 'mfrh_sync_alt', "Sync ALT<br />(Pro)",
-				array( $this, 'admin_sync_alt_callback' ),
-				'mfrh_advanced_settings-menu', 'mfrh_advanced_settings' );
+
+			if ( $method == 'media_title' || $method == 'post_title' ) {
+				add_settings_field( 'mfrh_sync_alt', "Sync ALT<br />(Pro)",
+					array( $this, 'admin_sync_alt_callback' ),
+					'mfrh_advanced_settings-menu', 'mfrh_advanced_settings' );
+			}
+			if ( $method == 'post_title' || $method == 'alt_text' ) {
+				add_settings_field( 'mfrh_sync_media_title', "Sync Media Title<br />(Pro)",
+					array( $this, 'admin_sync_media_title_callback' ),
+					'mfrh_advanced_settings-menu', 'mfrh_advanced_settings' );
+			}
 
 			register_setting( 'mfrh_advanced_settings', 'mfrh_undo' );
 			register_setting( 'mfrh_advanced_settings', 'mfrh_manual_rename' );
 			register_setting( 'mfrh_advanced_settings', 'mfrh_numbered_files' );
 			register_setting( 'mfrh_advanced_settings', 'mfrh_sync_alt' );
+			register_setting( 'mfrh_advanced_settings', 'mfrh_sync_media_title' );
 
 			// SUBMENU > Settings > Developer Settings
 			add_settings_section( 'mfrh_developer_settings', null, null, 'mfrh_developer_settings-menu' );
-			add_settings_field( 'mfrh_rename_guid', "Sync GUID",
-				array( $this, 'admin_rename_guid_callback' ),
-				'mfrh_developer_settings-menu', 'mfrh_developer_settings' );
 			add_settings_field( 'mfrh_utf8_filename', __( 'UTF-8 Filename<br />(Pro)', 'media-file-renamer' ),
 				array( $this, 'admin_utf8_filename_callback' ),
 				'mfrh_developer_settings-menu', 'mfrh_developer_settings' );
@@ -131,6 +127,9 @@ class MFRH_Admin extends Meow_Admin {
 				'mfrh_developer_settings-menu', 'mfrh_developer_settings' );
 			add_settings_field( 'mfrh_logsql', __( 'SQL Logs<br />(Pro)', 'media-file-renamer' ),
 				array( $this, 'admin_logsql_callback' ),
+				'mfrh_developer_settings-menu', 'mfrh_developer_settings' );
+			add_settings_field( 'mfrh_rename_guid', "Sync GUID",
+				array( $this, 'admin_rename_guid_callback' ),
 				'mfrh_developer_settings-menu', 'mfrh_developer_settings' );
 			add_settings_field( 'mfrh_rename_on_save', "Rename on Post Save",
 				array( $this, 'admin_rename_on_save_callback' ),
@@ -235,17 +234,15 @@ class MFRH_Admin extends Meow_Admin {
   }
 
 	function admin_manual_rename_callback( $args ) {
-    $value = get_option( 'mfrh_manual_rename', null );
-		$html = '<input ' . disabled( $this->is_pro(), false, false ) . ' type="checkbox" id="mfrh_manual_rename" name="mfrh_manual_rename" value="1" ' .
-			checked( 1, get_option( 'mfrh_manual_rename' ), false ) . '/>';
+		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_manual_rename" name="mfrh_manual_rename" value="1" ' .
+			checked( 1, apply_filters( 'mfrh_manual', false ), false ) . '/>';
     $html .= '<label>Enable</label><br /><small>Manual field will be enabled in the Media Edit screen.</small>';
     echo $html;
   }
 
 	function admin_numbered_files_callback( $args ) {
-    $value = get_option( 'mfrh_numbered_files', null );
-		$html = '<input ' . disabled( $this->is_pro(), false, false ) . ' type="checkbox" id="mfrh_numbered_files" name="mfrh_numbered_files" value="1" ' .
-			checked( 1, get_option( 'mfrh_numbered_files' ), false ) . '/>';
+		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_numbered_files" name="mfrh_numbered_files" value="1" ' .
+			checked( 1, apply_filters( 'mfrh_numbered', false ), false ) . '/>';
     $html .= __( '<label>Enable Numbering</label><br /><small>Identical filenames will be allowed by the plugin and a number will be appended automatically (myfile.jpg, myfile-2.jpg, myfile-3.jpg, etc).</small>', 'media-file-renamer' );
     echo $html;
   }
@@ -258,9 +255,28 @@ class MFRH_Admin extends Meow_Admin {
   }
 
 	function admin_sync_alt_callback( $args ) {
-		$html = '<input ' . disabled( $this->is_pro(), false, false ) . ' type="checkbox" id="mfrh_sync_alt" name="mfrh_sync_alt" value="1" ' .
+		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_sync_alt" name="mfrh_sync_alt" value="1" ' .
 			checked( 1, get_option( 'mfrh_sync_alt' ), false ) . '/>';
-    $html .= __( '<label>ALT = Title</label><br /><small>Keep in mind that the HTML in your posts and pages will be however not modified, that is too dangerous!</small>', 'media-file-renamer' );
+		$method = apply_filters( 'mfrh_method', 'media_title' );
+		$what = __( "Error!", 'media-file-renamer' );
+		if ( $method == "media_title" )
+			$what = __( "Title of Media", 'media-file-renamer' );
+		else if ( $method == "post_title" )
+			$what = __( "Attached Post Title", 'media-file-renamer' );
+    $html .= __( "<label>ALT = <b>$what</b></label><br /><small>Keep in mind that the HTML in your posts and pages will be however not modified, that is too dangerous!</small>", 'media-file-renamer' );
+    echo $html;
+  }
+
+	function admin_sync_media_title_callback( $args ) {
+		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_sync_media_title" name="mfrh_sync_media_title" value="1" ' .
+			checked( 1, get_option( 'mfrh_sync_media_title' ), false ) . '/>';
+		$method = apply_filters( 'mfrh_method', 'media_title' );
+		$what = __( "Error!", 'media-file-renamer' );
+		if ( $method == "alt_text" )
+			$what = __( "Media ALT", 'media-file-renamer' );
+		else if ( $method == "post_title" )
+			$what = __( "Attached Post Title", 'media-file-renamer' );
+    $html .= __( "<label>Media Title = <b>$what</b></label><br /><small>Keep in mind that the HTML in your posts and pages will be however not modified, that is too dangerous!</small>", 'media-file-renamer' );
     echo $html;
   }
 
@@ -272,14 +288,24 @@ class MFRH_Admin extends Meow_Admin {
   }
 
 	function admin_auto_rename_callback( $args ) {
-    $value = get_option( 'mfrh_auto_rename', 'none' );
+    $value = apply_filters( 'mfrh_method', 'media_title' );
 		$html = '<label><select id="mfrh_auto_rename" name="mfrh_auto_rename">
 		  <option ' . selected( 'media_title', $value, false ) . 'value="media_title">Title of Media</option>
 		  <option ' .
-				disabled( $this->is_pro(), false, false ) . ' ' .
+				disabled( $this->is_registered(), false, false ) . ' ' .
 				selected( 'post_title', $value, false ) . 'value="post_title">Attached Post Title (Pro)</option>
+			<option ' .
+				disabled( $this->is_registered(), false, false ) . ' ' .
+				selected( 'alt_text', $value, false ) . 'value="alt_text">Alternative Text (Pro)</option>
 			<option ' . selected( 'none', $value, false ) . 'value="none">None</option>
 		</select></label><small><br />' . __( 'If the plugin considers that it is too dangerous to rename the file directly at some point, it will be flagged internally <b>as to be renamed</b>. The list of those flagged files can be found in Media > File Renamer and they can be renamed from there.', 'media-file-renamer' ) . '</small>';
+    echo $html;
+  }
+
+	function admin_on_upload_callback( $args ) {
+		$html = '<input type="checkbox" id="mfrh_on_upload" name="mfrh_on_upload" value="1" ' .
+			checked( 1, get_option( 'mfrh_on_upload', false ), false ) . '/>';
+    $html .= __( '<label>Enable</label><br /><small>During upload, the filename will be renamed based on the title of the media.</small>', 'media-file-renamer' );
     echo $html;
   }
 
@@ -308,16 +334,16 @@ class MFRH_Admin extends Meow_Admin {
   }
 
 	function admin_utf8_filename_callback( $args ) {
-    $value = get_option( 'mfrh_utf8_filename', null );
-		$html = '<input type="checkbox" id="mfrh_utf8_filename" name="mfrh_utf8_filename" value="1" ' .
-			checked( 1, get_option( 'mfrh_utf8_filename' ), false ) . '/>';
+		$html = '<input ' . disabled( $this->is_registered(), false, false ) . '
+			type="checkbox" id="mfrh_utf8_filename" name="mfrh_utf8_filename" value="1" ' .
+			checked( 1, apply_filters( 'mfrh_utf8', false ), false ) . '/>';
     $html .= __( '<label>Allow non-ASCII filenames</label><br /><small>This usually doesn\'t work well on Windows installs.</small>', 'media-file-renamer' );
     echo $html;
   }
 
 	function admin_force_rename_callback( $args ) {
     $value = get_option( 'mfrh_force_rename', null );
-		$html = '<input ' . disabled( $this->is_pro(), false, false ) . ' ' . disabled( $this->is_pro(), false, false ) . ' type="checkbox" id="mfrh_force_rename" name="mfrh_force_rename" value="1" ' .
+		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_force_rename" name="mfrh_force_rename" value="1" ' .
 			checked( 1, get_option( 'mfrh_force_rename' ), false ) . '/>';
     $html .= __( '<label>Enabled</label><br/><small>Update the references to the file even if the file renaming itself was not successful. You might want to use that option if your install is broken and you are trying to link your Media to files for which the filenames has been altered (after a migration for exemple)</small>', 'media-file-renamer' );
     echo $html;
@@ -333,7 +359,7 @@ class MFRH_Admin extends Meow_Admin {
 
 	function admin_logsql_callback( $args ) {
     $value = get_option( 'mfrh_logsql', null );
-		$html = '<input ' . disabled( $this->is_pro(), false, false ) . ' type="checkbox" id="mfrh_logsql" name="mfrh_logsql" value="1" ' .
+		$html = '<input ' . disabled( $this->is_registered(), false, false ) . ' type="checkbox" id="mfrh_logsql" name="mfrh_logsql" value="1" ' .
 			checked( 1, get_option( 'mfrh_logsql' ), false ) . '/>';
     $html .= __( '<label>Enabled</label><br/><small>The files <a target="_blank" href="' . plugins_url( "media-file-renamer" ) . '/mfrh_sql.log">mfrh_sql.log</a> and <a target="_blank" href="' . plugins_url( "media-file-renamer" ) . '/mfrh_sql_revert.log">mfrh_sql_revert.log</a> will be created and they will include the raw SQL queries which were run by the plugin. If there is an issue, the revert file can help you reverting the changes more easily.</small>', 'media-file-renamer' );
     echo $html;
